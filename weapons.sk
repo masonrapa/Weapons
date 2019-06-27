@@ -1,0 +1,255 @@
+#Code By Masonrapa		
+
+command /hook:
+	trigger:
+		send "&aSuccesfully."
+		give fishing rod of unbreaking 900 named "&fSuper&7&lGancho" to player
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle bubble ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		wait 2 seconds
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle bubble ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		message "&6Encontraste un Objeto muy valioso! el &fSuper&7&lGancho &6Esta Super Herramienta te permite agarrarte a cualquier superficie o pared y dispararte hacia ella!"
+
+
+command /endermansword:
+	trigger:
+		send "&aSuccesfully."
+		give gold music disc named "&dSable De los &5Enderman" to player
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle portal ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		wait 2 seconds
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle portal ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		message "&6Ahora tienes el legendario Poder del &d&lSable de los &5Enderman &6Una poderosa arma forjada y usada por el rey de los endermans en su revolucion para conquistar el mundo"
+
+		
+command /deathscythe:
+	trigger:
+		send "&aSuccesfully."
+		give green music disc named "&8Guadaña de la &0Muerte" to player
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle depthsuspend ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		wait 2 seconds
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle depthsuspend ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		message "&6Has encontrado la poderosa &8Guadaña de la &0Muerte &6Un arma llena de odio y maldad cuya unica intencion en destruir el alma de su adversario con un solo golpe"
+
+command /magicwand:
+	trigger:
+		send "&aSuccesfully."
+		give blocks music disc named "&aV&bA&cR&dI&eT&fA &2M&1A&4G&5I&6C&fA" to player
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle enchantmenttable ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		wait 2 seconds
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle enchantmenttable ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		message "&6Ahora eres el nuevo portador de la poderosa &aV&bA&cR&dI&eT&fA &2M&1A&4G&5I&6C&fA &6Una Herramienta que permite hacer cualquier cosa que pienses, 'Inesperado' es su palabra favorita!"		
+
+command /icewand:
+	trigger:
+		send "&aSuccesfully."
+		give chirp music disc named "&b&lPoder del &9&lHielo" to player
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle splash ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		wait 2 seconds
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle splash ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		message "&6La legendaria arma: &b&lPoder del &9&lHielo &6Ahora te pertenece! Una herramienta con el super poder de congelar todo a su alrededor y disparar bolas de nieve que congelan cada bloque que tocan"
+
+command /blazewand:
+	trigger:
+		send "&aSuccesfully."
+		give chirp music disc named "&c&lVara De Los  &4Blazes" to player
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle flame ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		wait 2 seconds
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle flame ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		message "&6El arma legendaria &c&lVara De Los  &4Blazes &6Es ahora de tu propiedad! Ten mucho cuidado al usarla ya que podrías destruir todo a tu paso, hacer mal uso de este enorme poder conyeva malas consecuencias"
+
+
+command /notchsword:
+	trigger:
+		set {uwu} to player
+		send "&aSuccesfully."
+		give golden sword of knockback 4 and unbreaking 9000 named "&e&lEspada de &6&lNotch" to player
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle lava ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		wait 2 seconds
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle lava ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		message "&6Siente el poder de la &e&lEspada de &6&lNotch &6Este poderoso Arma solo tiene un objetivo: Arrasar!, las antiguas leyendas, cuentan que fue usada por el mismisimo Notch en su lucha contra herobrine!"
+
+command /zeusword:
+	trigger:
+		set {uwu} to player
+		send "&aSuccesfully."
+		give mall music disc named "&e&lEspada de &b&lZeus" to player
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle magicCrit ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		wait 2 seconds
+		execute console command "execute %{uwu}% ~0 ~0 ~0 particle magicCrit ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+		message "&6Acabas de encontrar la &e&lEspada de &b&lZeus &6Esta espada es muy dificil de manejar, pero cuando lo logras, podrás disparar rayos alla hacia donde quieras!"
+
+
+#================================================================================================000
+
+
+
+#EnderMan Sword
+on rightclick:
+	if player's held item is gold music disc named "&dSable De los &5Enderman":
+		loop players in radius 10 of the player:
+			set {target} to loop-player	
+			if {target} is set:
+				execute console command "execute %{uwu}% ~0 ~0 ~0 particle portal ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+				teleport {player} to {target}
+				execute console command "execute %{uwu}% ~0 ~0 ~0 particle portal ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+
+
+#Blaze Wand
+on rightclick:
+	if player's held item is chirp music disc named "&c&lVara De Los  &4Blazes":
+		shoot a fireball from player at speed 0.00000000000000000000000001
+on leftclick:
+	if player's held item is chirp music disc named "&c&lVara De Los  &4Blazes":
+		set {wuw} to player
+		execute console command "effect %{wuw}% 12 15 1"
+		loop blocks in radius 2 of player:
+			loop-block is air:
+				set loop-block to fire
+
+
+#Notch Sword
+on damage:
+	attacker is a player
+	if attacker's held item is golden sword named "&e&lEspada de &6&lNotch":
+		set {pul} to attacker
+		execute console command "execute %{pul}% ~0 ~0 ~0 particle hugeexplosion ~ ~1 ~ 0.25 1 0.25 0.5 1000"
+		execute console command "effect %{pul}% 6 1 2"
+		create explosion of force 1 at {pul}
+		execute console command "effect %{pul}% 6 1 2"
+
+		
+
+
+#Magic Wand
+on rightclick:
+	if player's held item is blocks music disc named "&aV&bA&cR&dI&eT&fA &2M&1A&4G&5I&6C&fA":
+		set {_text} to random integer between 0 and 8
+		if  {_text} is 0:
+			message "&1P&2a&4t&5a&6t&9a"
+		if  {_text} is 1:
+			loop blocks above targeted block:
+				teleport player at loop-block
+				stop trigger
+		if  {_text} is 2:
+			loop blocks above targeted block:
+				spawn 1 horse at loop-block
+				spawn 1 pig at loop-block
+				spawn 1 sheep at loop-block
+				spawn 1 chicken at loop-block
+				spawn 1 cow at loop-block
+				stop trigger
+		if  {_text} is 3:
+			loop blocks above targeted block:
+				create explosion of force 3 at loop-block
+				stop trigger
+		if  {_text} is 4:
+			loop blocks above targeted block:
+				spawn 1 zombie at loop-block
+				spawn 1 spider at loop-block
+				spawn 1 skeleton at loop-block
+				spawn 1 creeper at loop-block
+				spawn 1 cow at loop-block
+				stop trigger
+		if  {_text} is 5:
+			message "&7===================================="
+			message "&4OOO    &6OOO    &1OOO     &2O"
+			message "&4O        &6O  O    &1O  O     &2O"
+			message "&4OOO    &6OOO    &1OOO     &2OOOO"
+			message "&7===================================="
+		if  {_text} is 6:
+			give diamond to player
+		if  {_text} is 7:
+			set {pay} to player
+			set {efecto} to random integer between 1 and 23
+			execute console command "effect %{pay}% %{efecto}%"
+		if  {_text} is 8:
+			set {pay} to player
+			set {efecto} to random integer between 1 and 23
+			execute console command "effect %{pay}% %{efecto}%"
+
+
+#Death Scythe
+on damage:
+	attacker is a player
+	set {victima} to victim
+	if attacker's held item is green music disc named "&8Guadaña de la &0Muerte":
+		if victim is a player:
+			execute console command "effect %{victima}% wither"
+			execute console command "effect %{victima}% 9"
+		else: 
+			execute console command "execute %{player}% ~0 ~0 ~0 effect @e[r=5] wither"
+			execute console command "effect %{player}% clear"
+			
+#Ice wand
+on right click:
+	if player's held item is chirp music disc named "&b&lPoder del &9&lHielo":
+		shoot a snowball from player at speed 5
+
+on projectile hit:
+	if shooter's held item is chirp music disc named "&b&lPoder del &9&lHielo":
+		loop blocks in radius 1 of projectile:
+			loop-block is not air:
+				set loop-block to ice block
+
+
+#Zeus Sword
+on left click:
+	if player's held item is mall music disc named "&e&lEspada de &b&lZeus":
+		set {awa} to player
+		set {x} to random integer between -10 and 10
+		set {z} to random integer between -10 and 10
+		execute console command "execute %{awa}% ~0 ~0 ~0 summon LightningBolt ~%{x}% ~0 ~%{z}%"
+on right click:
+	if player's held item is mall music disc named "&e&lEspada de &b&lZeus":
+		set {rur} to player
+		loop blocks above targeted block:
+			create lightning at loop-block
+
+#Super Hook
+on shoot:
+	if shooter's held item is fishing rod named "&fSuper&7&lGancho":
+		set {lol} to shooter
+		send "&b&nGancho preparado en &c&l3" to {lol}
+		wait 1 seconds
+		message "&b&nGancho preparado en &c&l2" to {lol}
+		wait 1 seconds
+		message "&b&nGancho preparado en &c&l1" to {lol}
+		wait 1 seconds
+		set {up} to location of projectile
+on player sneak toggle:
+	if player's held item is fishing rod named "&fSuper&7&lGancho":
+		teleport player to {up}
+
+#SUPERPOWERS
+command /superpower:
+	trigger:
+		#ENDERMAN SWORD
+		if player's held item is gold music disc named "&dSable De los &5Enderman":
+			set {pra} to player
+			loop blocks above targeted block:
+				loop players in radius 2 of the loop-block:
+					set {target} to loop-player	
+					if {target} is set:
+						execute console command "execute %{target}% ~0 ~0 ~0 particle portal ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+						teleport {pra} to {target}
+						execute console command "execute %{target}% ~0 ~0 ~0 particle portal ~ ~1 ~ 0.25 1 0.25 0.5 10000"
+					if {target} is not set:
+						message "&9No hay victimas cerca"
+		#ICE POWER
+		if player's held item is chirp music disc named "&b&lPoder del &9&lHielo":
+			loop blocks in radius 3 of player:
+				loop-block is not air:
+					set loop-block to snow block		
+		
+		#NOTCH SWORD
+		if player's held item is golden sword named "&e&lEspada de &6&lNotch":
+			set {pul} to player
+			execute console command "effect %{pul}% 6 1 2"
+			execute console command "execute %{pul}% ~0 ~0 ~0 tp @e[r=5] ~0 ~10 ~0"
+			wait 1 seconds
+			execute console command "execute %{pul}% ~0 ~0 ~0 particle hugeexplosion ~ ~1 ~ 0.25 1 0.25 0.5 1000"
+			create explosion of force 1 at {pul}
+			execute console command "effect %{pul}% 6 1 2"
+	
+		
+		else:
+			message "&c&lNo tienes ningun superpoder actualmente... :("
